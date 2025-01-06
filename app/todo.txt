@@ -1,0 +1,93 @@
+ETHERS:
+- read reserves: ✔️
+- read balance ERC20: ✔️
+- reab balance ETH: ✔️
+- transfer eth: ✔️
+- transfer erc20: ✔️
+- swap univ2 eth: ✔️
+- swap univ2 token(approve, swaps): ✔️
+- multicall simple (uint,uint): ✔️
+- multicall complex (uint,string): ✔️
+- subscribe logs for reserves on a lp: ✔️
+- encode/decode uint256: ✔️
+- encode/decode address: ✔️
+- encode/decode strings: ✔️
+- don't loose precision for reserves: ✔️
+- change all scripts for cli with ethers: ✔️
+- action + tp/sl: 
+- permit router:
+
+TODO:
+- read balance : ✔️
+- call method contract (read) : ✔️
+- call method contract (write) : ✔️
+- swap univ2 (approve, swaps): ✔️
+- construct architecture cli: ✔️
+- construct cli buy/sell univ2: ✔️
+- approve/wrap/unwrap + max : ✔️
+- string H160 alias + fn alias : ✔️
+- transfer eth : ✔️
+- transfer erc20 : ✔️
+- multicall simple (uint,uint) same function : ✔️
+- multicall simple (uint,uint) diff function : ✔️
+- listen prices (by period of time) : ✔️
+- convert with decimals : ✔️
+- subscribe logs for reserves on a lp : ✔️
+- decode logs : 
+- Use viewer with input(amountIn, tokens, pools, isV2s)[bytes] => output (amountOut)[uint256] :
+- SC swapper  same as viewer but with swap implemented with check of min% between amountIn and amountOut 
+    => input(tokenIn,tokenOut,amountIn,router,percent)=> output(amountOut)
+- expression of the prices on WETH and STABLE : 
+- encode/decode uint256 : ✔️
+- encode/decode address : ✔️
+- encode/decode strings : ✔️
+- multicall complex (uint, address, string) : ✔️
+- SC swapper (router + amountOut) : 
+- await tx : ✔️
+- custom panic error for alias : ✔️
+- add custom alias : ✔️
+- config file for (gas prices, custom address): 
+- listen logs for prices changes : ✔️
+- listen logs multiple tokens (to manage multiple position): 
+- listen liquidity : 
+- change config .env with binarie (how?) : 
+- action + tp/sl : 
+- implement SL/TP :
+- TP par rapport au % de la position:
+- TP par rapport à un certain prix: 
+- manage different mode (snipLaunch, buy only, sell only, with tp/sl) :
+- listen mempool :
+- json rpc call :
+- access list :
+- aggregator llama for best routes (no API for now :/):
+
+Question:
+- Can we do a multicall to check:
+    1) with an view function to check honey pot (with revert if honey héhé)
+    2) make the swap/snip if no revert :)
+
+CLI:
+- buy/sell simple => tokenIn => tokenOut => amount (all or arb) : 
+- deposit/withdraw => amount (all or arb) : 
+- buy/sell => tp ? => sl ? => tokenIn => tokenOut => amount (all or arb) : 
+- wait for target => tp ? => sl ? => tokenIn => tokenOut => amount (all or arb (%)) : 
+ 
+- cargo run -- -b -i <address> 
+
+ORGA CLI:
+- construct cli :
+- module system (cf *4) :
+- binary :
+
+OPTIONNAL:
+- multi-wallet (solidity) :
+- multi-wallet (solidity+assembly)
+- multi-wallet (yul)
+- multi-wallet (huff)
+
+RESSOURCES:
+https://github.com/tomusdrw/rust-web3
+https://tms-dev-blog.com/rust-web3-connect-to-ethereum/
+https://tms-dev-blog.com/how-to-swap-on-uniswap-v2-with-rust-web3/
+https://tms-dev-blog.com/rust-web3-token-transactions-from-blocks/
+https://doc.rust-lang.org/1.39.0/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html (*4)
